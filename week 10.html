@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>JavaScript Exercises</title>
+</head>
+<body>
+
+    <script>
+        // 1
+        var num = 10, floatNum = 10.5, str = "Hello, JavaScript!", boolVal = true;
+        document.write("<h3>1</h3>");
+        document.write(num + "<br>" + floatNum + "<br>" + str + "<br>" + boolVal + "<br><br>");
+
+        // 2
+        var name = prompt("Enter your name:");
+        var studentId = prompt("Enter your Student ID:");
+        alert(name + "\n" + studentId);
+        document.write("<h3>2</h3>" + name + "<br>" + studentId + "<br><br>");
+
+        // 3
+        var marks = parseInt(prompt("Enter marks:"));
+        var grade = (marks >= 80 && marks <= 100) ? "Distinction" :
+                    (marks >= 60 && marks < 80) ? "First Division" :
+                    (marks >= 50 && marks < 60) ? "Second Division" :
+                    (marks >= 40 && marks < 50) ? "Third Division" :
+                    (marks < 40) ? "Fail" : "Invalid";
+        alert(grade);
+        document.write("<h3>3</h3>" + marks + "<br>" + grade + "<br><br>");
+
+        // 4
+        var dayNum = parseInt(prompt("Enter a number (1-7):"));
+        var day = ["Invalid", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][dayNum] || "Invalid";
+        alert(day);
+        document.write("<h3>4</h3>" + dayNum + "<br>" + day + "<br><br>");
+
+        // 5
+        document.write("<h3>5</h3>");
+        for (var i = 1; i <= 4; i++) {
+            document.write('<img src="' + i + '.jpg" alt="Image ' + i + '" width="100"><br>');
+        }
+
+        // 6
+        document.write("<h3>6</h3>");
+        for (var i = 1; i <= 10; i++) {
+            document.write("5 * " + i + " = " + (5 * i) + "<br>");
+        }
+
+        // 8
+        var myColor = ["Red", "Green", "White", "Black"];
+        document.write("<h3>8</h3>" + myColor.toString() + "<br>" + myColor.join() + "<br>" + myColor.join('+') + "<br><br>");
+
+        // 9
+        var array = [1, 2, 3, 4, 5, 6], sum = 0, product = 1;
+        for (var i = 0; i < array.length; i++) { sum += array[i]; product *= array[i]; }
+        document.write("<h3>9</h3> Sum: " + sum + "<br>Product: " + product + "<br><br>");
+
+        // 10
+        function calcArea(l, b) { return l * b; }
+        var length = parseFloat(prompt("Enter length:"));
+        var breadth = parseFloat(prompt("Enter breadth:"));
+        alert("Area: " + calcArea(length, breadth));
+        document.write("<h3>10</h3>" + "Length: " + length + "<br>Breadth: " + breadth + "<br>Area: " + calcArea(length, breadth) + "<br><br>");
+
+        // 11
+        var x = 0, array = [];
+        function add_element_to_array() {
+            array[x] = document.getElementById("text1").value;
+            alert("Added: " + array[x]);
+            x++;
+            document.getElementById("text1").value = "";
+        }
+        function display_array() {
+            var e = "<hr/>";
+            for (var y = 0; y < array.length; y++) { e += "Element " + y + " = " + array[y] + "<br/>"; }
+            document.getElementById("Result").innerHTML = e;
+        }
+        document.write('<h3>11</h3><input type="text" id="text1">');
+        document.write('<input type="button" value="Add" onclick="add_element_to_array();">');
+        document.write('<input type="button" value="Display" onclick="display_array();">');
+        document.write('<div id="Result"></div>');
+    </script>
+
+
+        //7
+    <title>Table with Alternate Row Colors</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #2A8FA6;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #D3E3E8;
+        }
+        tr:nth-child(odd) {
+            background-color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+
+    <table id="dataTable">
+        <tr>
+            <th>S.N.</th>
+            <th>Name</th>
+            <th>Image</th>
+        </tr>
+    </table>
+
+    <script>
+        // Data for the table
+        let data = [
+            { sn: 1, name: "Name 1", image: "1.jpg" },
+            { sn: 2, name: "Name 2", image: "2.jpg" },
+            { sn: 3, name: "Name 3", image: "3.jpg" },
+            { sn: 4, name: "Name 4", image: "4.jpg" }
+        ];
+
+        let table = document.getElementById("dataTable");
+
+        for (let i = 0; i < data.length; i++) {
+            let row = table.insertRow();
+            row.insertCell(0).innerText = data[i].sn;
+            row.insertCell(1).innerText = data[i].name;
+            row.insertCell(2).innerText = data[i].image;
+        }
+    </script>
+
+</body>
+</html>
